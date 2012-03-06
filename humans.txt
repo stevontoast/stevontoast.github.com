@@ -13,4 +13,5 @@
 
   Standards: HTML5, CSS3
   Components: Modernizr, jQuery
-  Software:
+  Server: Github pages
+  Software: Sublime Text 2, iTerm 2, git, Kaleidoscope

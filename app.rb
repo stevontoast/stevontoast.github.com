@@ -1,12 +1,8 @@
 require 'rubygems'
 require 'sinatra'
 
-get "/" do
-  erb File.read("public/index.html")
-end
+set :public_folder, File.dirname(__FILE__)
 
-get "/:url" do
-  if  File.exists? "public/#{params[:url]}.html"
-    erb File.read "public/#{params[:url]}.html"
-  end
+get "/" do
+  erb File.read("index.html")
 end
