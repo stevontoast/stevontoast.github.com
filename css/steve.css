@@ -9,7 +9,20 @@
     font-style: normal;
 }
 
+
+@font-face {
+    font-family: 'VollkornRegular';
+    src: url('/webfonts/Vollkorn-Regular-webfont.eot');
+    src: url('/webfonts/Vollkorn-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/webfonts/Vollkorn-Regular-webfont.woff') format('woff'),
+         url('/webfonts/Vollkorn-Regular-webfont.ttf') format('truetype'),
+         url('/webfonts/Vollkorn-Regular-webfont.svg#VollkornRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 body {
-  font-family: "Fanwood", cursive;
+  font-family: "VollkornRegular", cursive;
 }
 
