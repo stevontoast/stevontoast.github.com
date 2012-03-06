@@ -1,0 +1,16 @@
+/* the humans responsible & colophon */
+/* humanstxt.org */
+
+
+  Dev: orta therox
+  Site: http://orta.github.com
+  Twitter: @orta
+  Location: Everywhere!
+
+  Design: Steven Stills
+  Site: You're at it
+  Twitter: @
+
+  Standards: HTML5, CSS3
+  Components: Modernizr, jQuery
+  Software:

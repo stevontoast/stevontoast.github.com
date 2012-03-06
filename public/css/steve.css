@@ -1,0 +1,14 @@
+
+@font-face {
+    font-family: 'Fanwood';
+    src: url('/webfonts/fanwood-webfont.eot');
+    src: url('/webfonts/fanwood-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/webfonts/fanwood-webfont.woff') format('woff'),
+         url('/webfonts/fanwood-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+  font-family: "Fanwood", cursive;
+}
