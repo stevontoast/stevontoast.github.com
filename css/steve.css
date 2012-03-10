@@ -26,3 +26,12 @@ body {
   font-family: "VollkornRegular", cursive;
 }
 
+a {
+  color: #8d8e8d;
+  text-decoration: none;
+}
+
+a:visited {
+    color: #8d8e8d;
+  text-decoration: none;
+}
