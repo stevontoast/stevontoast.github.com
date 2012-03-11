@@ -7,7 +7,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<title>Steven Stills - </title>
+	<title>Stevontoast - Home</title>
 	<meta name="description" content="">
 	<meta name="author" content="">
 
@@ -27,22 +27,23 @@
     width:100%;
     height: 100%;
   }
-
-  nav, header {
+  
+  /* move the title down from the top and left 100px */
+  header {
+    margin-top: 100px;   
     margin-left: 100px;
   }
-  header {
-    margin-top: 100px;
+
+  /* pull the nav up into the title, move it in from the left more */
+  nav {
+    margin-top:-60px;
+    margin-left:160px;
   }
 
-  h1, h2 {
-    margin: 5px -5px;
-    padding: 5px -5px;
-    line-height: 0.8em;
-  }
   h1 {
     color:#8d8e8d;
   }
+
   h2 {
     color:#a5a5a4; 
   }
@@ -50,23 +51,21 @@
 
 <body>
 
-<header>
-  <h1>Steveontoast</h1>
-  <h2>Not afraid to throw ink at the problem</h2>
-</header>
+<article>
+  <header>
+    <h1 id="title"><a href="/">Steveontoast</a></h1>
+  </header>
 
-<div role="main">
-  <nav>
-    <ul>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Portfolio</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </nav>
-</div>
-<footer>
-
-</footer>
+  <div role="main">
+    <nav>
+      <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="/portfolio">Portfolio</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</article>
 
 <script>
 	var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];

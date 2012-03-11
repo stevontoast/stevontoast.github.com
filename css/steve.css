@@ -1,15 +1,3 @@
-
-@font-face {
-    font-family: 'Fanwood';
-    src: url('/webfonts/fanwood-webfont.eot');
-    src: url('/webfonts/fanwood-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/webfonts/fanwood-webfont.woff') format('woff'),
-         url('/webfonts/fanwood-webfont.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-
 @font-face {
     font-family: 'VollkornRegular';
     src: url('/webfonts/Vollkorn-Regular-webfont.eot');
@@ -22,10 +10,29 @@
 
 }
 
+/* use vollkorn as all text fonts */
 body {
   font-family: "VollkornRegular", cursive;
 }
 
+/* title is a h1 with the text removed and replaced by the image */
+h1#title {
+    margin: 0;
+    padding: 0;
+    text-indent:-9999px;
+    width: 400px;
+    height: 162px;
+    background: url('/img/stev-logo.png') no-repeat;
+}
+
+h1#title a {
+    display: block;
+    overflow: hidden;
+    width: 400px;
+    height: 162px;
+}
+
+/* link colours */
 a {
   color: #8d8e8d;
   text-decoration: none;
