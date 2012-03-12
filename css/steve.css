@@ -34,11 +34,11 @@ h1#title a {
 
 /* link colours */
 a {
-  color: #8d8e8d;
+  color: #000000;
   text-decoration: none;
 }
 
 a:visited {
-    color: #8d8e8d;
+    color: #000000;
   text-decoration: none;
 }
