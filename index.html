@@ -1,597 +1,78 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-<title>{Title}{block:SearchPage} | {SearchQuery}{/block:SearchPage}{block:PostSummary} | {PostSummary}{/block:PostSummary}{block:Pagination}{block:PreviousPage} {lang:Page CurrentPage of TotalPages}{/block:PreviousPage}{/block:Pagination}</title>
-<link rel="shortcut icon" href="{Favicon}">
-<link rel="alternate" type="application/rss+xml" href="{RSS}">
-{block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
+	<title>Stevontoast - Home</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
 
-<meta name="color:Text" content="#FFFFFF" />
-<meta name="color:Background" content="#333333" />
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/steve.css">
 
-<!--  Default background by Adam Lisagor (http://www.lonelysandwich.com/)  -->
-<meta name="image:Background" content="http://static.tumblr.com/jw8fmba/SmYm2aors/bg.jpg" />
-<meta name="image:Title" content="" />
-
-<meta name="font:Text" content="Helvetica Neue" />
-
-<meta name="text:Title size" content="30px" />
-<meta name="text:Transition speed" content="1s" />
-<meta name="text:Advanced background properties" content="" />
-
-<meta name="if:Posts rotate and zoom" content="1" />
-<meta name="if:Center background" content="1" />
-<meta name="if:Repeat background" content="1" />
-<meta name="if:Center title" content="1" />
-<meta name="if:Show note counts" content="1" />
-
-<!--  Google Webfonts  -->
-<meta name="text:Google Webfont URL" content="http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic" />
-<meta name="text:Google Webfont name" content="PT Sans" />
-<meta name="text:Title Google Webfont URL" content="http://fonts.googleapis.com/css?family=Open+Sans:800" />
-<meta name="text:Title Google Webfont name" content="Open Sans" />
-
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+	<script src="js/libs/modernizr-2.5.3.min.js"></script>
+</head>
 
 <style type="text/css">
-{block:IfGoogleWebfontURL}@import url({text:Google Webfont URL});{/block:IfGoogleWebfontURL}
-{block:IfTitleGoogleWebfontURL}@import url({text:Title Google Webfont URL});{/block:IfTitleGoogleWebfontURL}
-html,body {
+  html {
+    /* this puts an image in the bottom right */
+    background-image: url(http://i1256.photobucket.com/albums/ii490/Stevon_toast/portfoliolayout-1.png);
+    background-position: right bottom;
+    background-repeat: no-repeat;
     width: 100%;
     height: 100%;
-}
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-    color: inherit;
-}
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav,  section {
-    display: block;
-}
-ol, ul {
-    list-style: none;
-}
-p, li, code, td {
-    font-size: 13px;
-}
-p {
-	margin: 10px 0;
-}
-h1 {
-}
-h2 {
-	line-height: 100%;
-	font-size: 15px;
-	text-transform: uppercase;
-	{block:IfTitleGoogleWebfontURL}font-family: '{text:Title Google Webfont name}', {font:Text};{/block:IfTitleGoogleWebfontURL}
-	font-weight: 800;
-}
-h3 {
-	line-height: 100%;
-	font-size: 11px;
-	text-transform: uppercase;
-	{block:IfTitleGoogleWebfontURL}font-family: '{text:Title Google Webfont name}', {font:Text};{/block:IfTitleGoogleWebfontURL}
-	font-weight: 800;
-}
-blockquote, q {
-    quotes: none;
-}
-blockquote:before, blockquote:after, q:before, q:after {
-    content: '';
-    content: none;
-}
-blockquote {
-	margin: 10px 0;
-	padding-left: 10px;
-	border-left: 1px dotted {color:Text};
-}
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-em, i {
-	font-style: italic;
-}
-strong, b {
-	font-weight: bold;
-}
-a {
-	text-decoration: underline;
-}
-body {
-    min-height: 1000px;
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    background: url({image:Background}) {color:Background} {block:IfCenterBackground}center{/block:IfCenterBackground} {block:IfNotRepeatBackground}no-repeat{/block:IfNotRepeatBackground} {text:Advanced background properties};
-	color: {color:Text};
-	font-family: {block:IfGoogleWebfontURL}'{text:Google Webfont name}', {/block:IfGoogleWebfontURL}{font:Text};
-}
-.step-title ~ .header {
-    opacity: 0;
-}
-.header {
-    position: fixed;
-    left: 0;
-	top: 0;
-    padding: 20px;
-    z-index: 100;
+  }
 
-    -webkit-transition: opacity 0.5s, -webkit-transform 0.5s 1s;
-    -moz-transition:    opacity 0.5s,    -moz-transform 0.5s 1s;
-    -ms-transition:     opacity 0.5s,     -ms-transform 0.5s 1s;
-    -o-transition:      opacity 0.5s,      -o-transform 0.5s 1s;
-    transition:         opacity 0.5s,         transform 0.5s 1s;
-}
-.header h1 {
-	line-height: 100%;
-	font-size: 15px;
-	text-transform: uppercase;
-	{block:IfTitleGoogleWebfontURL}font-family: '{text:Title Google Webfont name}', {font:Text};{/block:IfTitleGoogleWebfontURL}
-	font-weight: 800;
-}
-.header h1 img {
-	max-height: 25px;
-}
-.header h1, #title h1 {
-	cursor: pointer;
-}
-.header h1 span, #title h1 span {
-	font-family: Arial, Helvetica, sans-serif;
-	
-    -webkit-transition: opacity 0.25s;
-    -moz-transition:    opacity 0.25s;
-    -ms-transition:     opacity 0.25s;
-    -o-transition:      opacity 0.25s;
-    transition:         opacity 0.25s;
-	
-	opacity: 0;
-}
-h1 .visible {
-	opacity: 1 !important;
-}
-.header:hover h1 span, #title:hover h1 span {
-	opacity: 1;
-}
-#title {
-	width: 400px;
-	{block:IfCenterTitle}text-align: center;{/block:IfCenterTitle}
-}
-#title h1 {
-	line-height: 110%;
-	text-transform: uppercase;
-	margin-bottom: 10px;
-	{block:IfTitleGoogleWebfontURL}font-family: '{text:Title Google Webfont name}', {font:Text};{/block:IfTitleGoogleWebfontURL}
-	font-weight: 800;
-	font-size: {text:Title size};
-}
-#title h1 img {
-	max-width: 100%;
-	display: inline;
-}
-.menu {
-	background: {color:Text};
-	position: relative;
-	margin: 25px auto 0 auto;
-	
-	display: none;
-	
-	-webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
-	-moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
-	box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
-}
-#title .menu {
-	width: 175px;
-    border-radius: 5px;
-}
-.header .menu {
-	width: 150px;
-    border-radius: 3px;
-}
-.menu .arrow {
-	width: 0;
-	position: absolute;
-	top: -10px;
-	border-bottom: 10px solid {color:Text};
-	border-left: 10px solid transparent;
-	border-right: 10px solid transparent;
-}
-.menu a {
-	text-decoration: none;
-}
-#title .menu .arrow {
-	left: 50%;
-	margin-left: -10px;
-}
-.header .menu .arrow {
-	left: 15px;
-}
-.menu .item {
-	padding: 7px 15px;
-	border-bottom: 1px solid {color:Background};
-	font-size: 13px;
-	color: {color:Background};
-	text-align: left;
-}
-.menu .item input {
-	width: 100%;
-	background: none;
-	border: 0px;
-	outline: none;
-}
-.menu .item input::-webkit-input-placeholder {
-    color: {color:Background};
-	font-family: {block:IfGoogleWebfontURL}'{text:Google Webfont name}', {/block:IfGoogleWebfontURL}{font:Text};
-	font-size: 13px;
-}
-.step {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing:    border-box;
-    -ms-box-sizing:     border-box;
-    -o-box-sizing:      border-box;
-    box-sizing:         border-box;
-    -webkit-transition: opacity {text:Transition speed};
-    -moz-transition:    opacity {text:Transition speed};
-    -ms-transition:     opacity {text:Transition speed};
-    -o-transition:      opacity {text:Transition speed};
-    transition:         opacity {text:Transition speed};
-}
-.step:not(.active) {
-    opacity: 0;
-	z-index: 0 !important;
-}
-.active {
-	z-index: 9999;
-}
-.slide {
-    display: block;
-	width: 400px;
-}
-.slide img,
-.slide embed,
-.slide iframe {
-    border-radius: 5px;
-	display: block;
-}
-.slide .post_control {
-	margin-top: 25px;
-	width: 100%;
-	text-align: center;
-}
-.slide .post_control a {
-	text-decoration: none;
-}
-.photo {
-	-webkit-box-shadow:  1px 1px 4px 0px rgba(0, 0, 0, 0.15);
-	-moz-box-shadow:  1px 1px 4px 0px rgba(0, 0, 0, 0.15);
-	box-shadow:  1px 1px 4px 0px rgba(0, 0, 0, 0.15);       
-}
-.text table {
-	border: {color:Text} 1px solid;
-	border-bottom: 0px;
-}
-.text table tr td {
-	padding: 10px;
-	border-bottom: {color:Text} 1px solid;
-}
-.text table tr .odd {
-	background: rgba(255,255,255,0.2);
-}
-.album {
-	width: 325px;
-	height: 220px;
-	position: relative;
-	overflow: hidden;
-	z-index: auto;
-}
-.album .art {
-	width: 220px;
-	height: 220px;
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-.album .slip {
-	background: url(http://static.tumblr.com/jw8fmba/tWBlyo3db/slip.png) no-repeat center;
-	width: 15px;
-	height: 100%;
-	position: absolute;
-	left: 0;
-	top: 0;
-	z-index: 1;
-}
-.album .art img {
-	width: 100%;
-}
-.album .vinyl_holder {
-	width: 105px;
-	height: 100%;
-	float: right;
-	position: relative;
-	overflow: hidden;
-}
-@-moz-keyframes spin {
-        from   { -moz-transform: rotate(0deg); }
-        to { -moz-transform: rotate(360deg); }
-}
+  /* move the title down from the top and left 100px */
+  header {
+    margin-top: 100px;   
+    margin-left: 100px;
+  }
 
-@-webkit-keyframes spin {
-        from   { -webkit-transform: rotate(0deg); }
-        to { -webkit-transform: rotate(360deg); }
-}
+  /* bring the nav up into the image, and push it across */
+  nav {
+    margin-top: -60px;
+    margin-left: 140px;
+  }
 
-@-o-keyframes spin {
-        from   { -o-transform: rotate(0deg); }
-        to { -o-transform: rotate(360deg); }
-}
+  h1 {
+    color:#8d8e8d;
+  }
 
-@-ms-keyframes spin {
-        from   { -o-transform: rotate(0deg); }
-        to { -o-transform: rotate(360deg); }
-}
-.album .vinyl {
-	width: 210px;
-	height: 210px;
-	position: absolute;
-	top: 5px;
-	left: -105px;
-	background: url(http://static.tumblr.com/jw8fmba/yIPlyo3f9/vinyl.png) no-repeat center;
-	-webkit-animation: spin 1s linear infinite;
-	-moz-animation: spin 1s linear infinite;
-	-ms-animation: spin 1s linear infinite;
-}
-.player {
-	margin: 10px 6px 0 6px;
-}
-.player .audio_player,
-.player .audio_player embed {
-	width: 207px;
-	height: 27px;
-}
-.caption {
-	margin: 10px 0;
-}
-#next {
-	text-align: center;
-}
-#next a {
-	text-decoration: none;
-}
-#next .jump_page {
-	padding: 2px 6px;
-	margin: 0 3px;
-	border-radius: 5px;
-	border: 1px solid {color:Text};
-}
-#next .current_page {
-	padding: 2px 6px;
-	margin: 0 3px;
-}
-.legend {
-	position: fixed;
-	bottom: 15px;
-	right: 15px;
-	width: 60%;
-	font-size: 12px;
-	text-align: right;
-	
-	opacity: 0.25;
-	
-    -webkit-transition: opacity 0.5s;
-    -moz-transition:    opacity 0.5s;
-    -ms-transition:     opacity 0.5s;
-    -o-transition:      opacity 0.5s;
-    transition:         opacity 0.5s;
-}
-body:hover .legend {
-	opacity: 1;
-}
-.legend a {
-	text-decoration: none;
-}
-body:hover .legend a {
-	text-decoration: underline;
-}
-/* NOT SUPPORTED STYLES */
-
-.fallback-message {
-    display: none;
-    width: 360px;
-    padding: 10px 20px 10px 120px;
-    margin: 20px auto;
-    border-radius: 5px;
-    background: url(http://static.tumblr.com/jw8fmba/59Xm2aq69/logo.png) no-repeat 20px center rgba(255,0,50,0.8);
-	color: #FFF;
-	border: 1px solid rgba(255,0,55,0.8);
-}
-.fallback-message p {
-    margin-bottom: 10px;
-}
-.impress-not-supported .step {
-    position: relative;
-    opacity: 1;
-    margin: 100px auto;
-}
-.impress-not-supported .legend {
-	display: none;
-}
-.impress-not-supported .fallback-message {
-    display: block;
-}
-#tumblr_controls {
-	position: fixed !important;
-	opacity: 0.25 !important;
-	margin: 20px;
-	
-    -webkit-transition: opacity 0.5s;
-    -moz-transition:    opacity 0.5s;
-    -ms-transition:     opacity 0.5s;
-    -o-transition:      opacity 0.5s;
-    transition:         opacity 0.5s;
-}
-body:hover #tumblr_controls {
-	opacity: 1 !important;
-}
-.hidden {
-	display: none;
-}
-{CustomCSS}
+  h2 {
+    color:#a5a5a4; 
+  }
 </style>
-{block:PermalinkPagination}
-<script type="text/javascript">
-$(document).keydown(function(e) {
-	var url = false;
-		{block:PreviousPost}if (e.which == 37) {
-			url = '{PreviousPost}'
-		}{/block:PreviousPost}
-		{block:NextPost}else if (e.which == 39) {
-			url = '{NextPost}'
-		}{/block:NextPost}
-		if (url) {
-        	window.location = url;
-      }
-});
+
+<body>
+
+<article>
+  <header>
+    <h1 id="title"><a href="/">Stevontoast</a></h1>
+  </header>
+  <div role="main">
+    <nav>
+      <ul>
+        <li><a href="stevontoast.github.com/404">About</a></li>
+        <li><a href="http://stevontoast.github.com/portfolio.html">Portfolio</a></li>
+        <li><a href="stevontoast.github.com/404">Contact</a></li>
+        <li><a href="http://www.twitter.com/beardtheory">Twitter</a></li>
+        <li><a href="http://stevontoast.tumblr.com">Tumblr</a></li>
+      </ul>
+    </nav>
+  </div>
+</article>
+
+<script>
+	var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+	g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+	s.parentNode.insertBefore(g,s)}(document,'script'));
 </script>
-{/block:PermalinkPagination}
-
-<!--  Untitled Themes customize assistant  -->
-<script type="text/javascript" src="http://static.tumblr.com/jw8fmba/i5nm2b5p0/untitledthemes_assistant.js"></script>
-
-</head>
-<body class="{Name}_tumblr">
-
-<div id="impress" class="impress-not-supported">
-
-    <div class="fallback-message">
-      <p>Your browser <b>doesn't support the features required</b> by this theme, instead you're presented with a simplified version. You may view this blog by its <a href="/archive">archive</a>.</p>
-      <p>For the best experience please use the latest version of <b><a href="http://www.google.com/chrome">Chrome</a></b>, <b><a href="http://www.firefox.com">Firefox</a></b> or <b><a href="http://www.apple.com/safari">Safari</a></b> with javascript enabled.</p>
-      <p>More information and support can be found at <a href="http://www.untitledthemes.com">Untitled Themes</a>.</p>
-    </div>
-    {block:IndexPage}
-  <div id="title" class="step slide" data-x="100" data-y="100" data-scale="1">
-    	<h1 onclick="$('#title .menu').slideToggle('fast'); $('.title_arrow').toggleClass('visible')">{block:IfNotTitleImage}{Title}{block:IfNotTitleImage}{block:IfTitleImage}<img src="{image:Title}" />{/block:IfTitleImage} <span class="title_arrow">&#9662;</span></h1>
-    	<p>{Description}</p>
-        <div class="menu">
-        	<div class="arrow"></div>
-        	{block:AskEnabled}<a href="/ask"><div class="item">
-                {AskLabel}
-            </div></a>{/block:AskEnabled}
-        	{block:SubmissionsEnabled}<a href="/submit"><div class="item">
-                {SubmitLabel}
-            </div></a>{/block:SubmissionsEnabled}
-        	<a href="/archive"><div class="item">
-                {lang:Archive}
-            </div></a>
-            {block:HasPages}{block:Pages}<a href="{URL}"><div class="item">
-            	{Label}
-            </div></a>{/block:Pages}{/block:HasPages}
-        	<a href="{RSS}"><div class="item">
-                {lang:Subscribe}
-            </div></a>
-        	<div class="item" style="border: 0">
-                <form action="/search" method="get">
-    				<input type="text" name="q" value="{SearchQuery}" placeholder="{lang:Search}" />
-				</form>
-            </div>
-        </div>
-    </div>
-    {/block:IndexPage}
-{block:Posts}
-  <div id="{PostID}" class="step slide" {block:Date}data-x="{block:Post1}5{/block:Post1}{block:Post2}14{/block:Post2}{block:Post3}9{/block:Post3}{block:Post4}15{/block:Post4}{block:Post5}7{/block:Post5}{block:Post6}15{/block:Post6}{block:Post7}10{/block:Post7}{block:Post8}3{/block:Post8}{block:Post9}11{/block:Post9}{block:Post9}1{/block:Post9}{block:Post10}6{/block:Post10}{block:Post11}12{/block:Post11}{block:Post12}2{/block:Post12}{block:Post13}13{/block:Post13}{block:Post14}8{/block:Post14}{block:Post15}4{/block:Post15}{Seconds}" data-y="{block:Post1}5{/block:Post1}{block:Post2}14{/block:Post2}{block:Post3}9{/block:Post3}{block:Post4}15{/block:Post4}{block:Post5}7{/block:Post5}{block:Post6}15{/block:Post6}{block:Post7}10{/block:Post7}{block:Post8}3{/block:Post8}{block:Post9}11{/block:Post9}{block:Post9}1{/block:Post9}{block:Post10}6{/block:Post10}{block:Post11}12{/block:Post11}{block:Post12}2{/block:Post12}{block:Post13}13{/block:Post13}{block:Post14}8{/block:Post14}{block:Post15}4{/block:Post15}{Seconds}"{block:IfPostsRotateAndZoom} data-rotate="{Seconds}0" data-scale="{12hours}"{/block:IfPostsRotateAndZoom} data-z="-1{24hours}" data-rotate-x="-{Minutes}" data-rotate-y="{Seconds}"{/block:Date}>
-        {block:Photo}<img src="{PhotoURL-400}" alt="{PhotoAlt}" class="photo" />{/block:Photo}
-        {block:Video}{Video-400}{/block:Video}
-        {block:Photoset}{Photoset-400}{/block:Photoset}
-        {block:Text}<div class="text">{block:Title}<h2>{Title}</h2>{/block:Title}{Body}</div>{/block:Text}
-        {block:Quote}<div class="text"><h2>{Quote}</h2>{block:Source}<p>- {Source}</p>{/block:Source}</div>{/block:Quote}
-        {block:Link}<div class="text"><h2><a href="{URL}" {Target}>{Name}</a></h2>{block:Description}{Description}{/block:Description}</div>{/block:Link}
-        {block:Chat}<div class="text">{block:Title}<h2>{Title}</h2>{/block:Title}
-            <table width="100%" cellpadding="0" cellspacing="0">
-                {block:Lines}<tr>
-                    <td class="{Alt}">{block:Label}{Label} {/block:Label}{Line}
-                    </td>
-                </tr>{/block:Lines}
-            </table>
-        </div>{/block:Chat}
-        {block:Answer}<div class="text">{Question}{Asker}{Answer}</div>{/block:Answer}
-        {block:Audio}
-        {block:AlbumArt}<div class="album">
-        	<div class="art"><img src="{AlbumArtURL}" /></div>
-        	<div class="vinyl_holder"><div class="slip"></div><div class="vinyl"></div></div>
-        </div>{/block:AlbumArt}
-        <div class="player">{AudioPlayer}</div>
-        {AudioEmbed-400}{/block:Audio}
-        {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
-    	{block:Date}<div class="post_control">
-        	<h3><a href="{Permalink}">{TimeAgo}</a>{block:PermalinkPage}{block:ContentSource} - <a href="{SourceURL}">{block:SourceLogo}<img src="{WhiteLogoURL}" width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />{/block:SourceLogo}{block:NoSourceLogo}{lang:Source}: {SourceTitle}{/block:NoSourceLogo}</a>{/block:ContentSource}{block:RebloggedFrom} - {lang:Reblogged from ReblogParentName 2}{/block:RebloggedFrom}{/block:PermalinkPage}{block:IfShowNoteCounts} - {NoteCountWithLabel}{/block:IfShowNoteCounts}
-        </h3></div>{/block:Date}
-    </div>
-{/block:Posts}
-{block:Pagination}
-{block:NextPage}
-  <div id="next" class="step slide" data-x="0" data-y="0">
-    	<a href="{NextPage}"><h2>{lang:Older entries}</h2></a>
-        <p>{block:JumpPagination length="5"}{block:CurrentPage}<span class="current_page">{PageNumber}</span>{/block:CurrentPage}{block:JumpPage}<a class="jump_page" href="{URL}">{PageNumber}</a>{/block:JumpPage}{/block:JumpPagination} ... <a class="jump_page" href="/page/{TotalPages}">{TotalPages}</a></p>
-    </div>
-{/block:NextPage}
-{/block:Pagination}
-</div>
-
-
-
-<div class="header">
-
-	<h1 onclick="$('.header .menu').slideToggle('fast'); $('.header_arrow').toggleClass('visible')">{block:IfNotTitleImage}{Title}{block:IfNotTitleImage}{block:IfTitleImage}<img src="{image:Title}" />{/block:IfTitleImage} <span class="header_arrow">&#9662;</span></h1>
-		<div class="menu">
-        	<div class="arrow"></div>
-        	{block:PermalinkPage}<a href="/"><div class="item">
-            	{lang:Home}
-            </div></a>{/block:PermalinkPage}
-        	{block:AskEnabled}<a href="/ask"><div class="item">
-                {AskLabel}
-            </div></a>{/block:AskEnabled}
-        	{block:SubmissionsEnabled}<a href="/submit"><div class="item">
-                {SubmitLabel}
-            </div></a>{/block:SubmissionsEnabled}
-        	<a href="/archive"><div class="item">
-                {lang:Archive}
-            </div></a>
-            {block:HasPages}{block:Pages}<a href="{URL}"><div class="item">
-            	{Label}
-            </div></a>{/block:Pages}{/block:HasPages}
-        	<a href="{RSS}"><div class="item">
-                {lang:Subscribe}
-            </div></a>
-        	<div class="item" style="border: 0">
-                <form action="/search" method="get">
-    				<input type="text" name="q" value="{SearchQuery}" placeholder="{lang:Search}" />
-				</form>
-            </div>
-        </div>
-</div>
-
-<div class="legend">
-	<strong>Hint:</strong> Use your {block:IndexPage}up and down or left and right{/block:IndexPage}{block:PermalinkPage}left and right{/block:PermalinkPage} arrow keys to move between posts.
-</div>
-
-<script src="http://static.tumblr.com/jw8fmba/tiGm2artu/impress.js"></script>
-
-{block:IfGoogleAnalyticsID}
-<script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', '{text:Google Analytics ID}']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
-{/block:IfGoogleAnalyticsID}
 </body>
 </html>
