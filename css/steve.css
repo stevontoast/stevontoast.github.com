@@ -1,44 +1,47 @@
-@font-face {
-    font-family: 'VollkornRegular';
-    src: url('/webfonts/Vollkorn-Regular-webfont.eot');
-    src: url('/webfonts/Vollkorn-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/webfonts/Vollkorn-Regular-webfont.woff') format('woff'),
-         url('/webfonts/Vollkorn-Regular-webfont.ttf') format('truetype'),
-         url('/webfonts/Vollkorn-Regular-webfont.svg#VollkornRegular') format('svg');
-    font-weight: normal;
-    font-style: normal;
+  html {
+    border-top: 6px solid #4bc1df;
+    border-bottom: 6px solid #4bc1df;
+    background-color: #72a6b4;
+    width: 1024px;
+    margin: 0 auto;
+  }
+    
+  nav, header {
+    margin-top: 90px;
+  }
 
-}
+  nav  img {
+    vertical-align:bottom;
+  }
 
-/* use vollkorn as all text fonts */
-body {
-  font-family: "VollkornRegular", cursive;
-}
+  ul#thumbnails {
+    padding: 0px;
+  }
 
-/* title is a h1 with the text removed and replaced by the image */
-h1#title {
-    margin: 0;
-    padding: 0;
-    text-indent:-9999px;
-    width: 400px;
-    height: 162px;
-    background: url('/img/stev-logo.png') no-repeat;
-}
+  ul#thumbnails li {
+    display: inline-block;
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-top: 15px;
+  }
 
-h1#title a {
-    display: block;
-    overflow: hidden;
-    width: 400px;
-    height: 162px;
-}
+  nav span {
+    margin-bottom: -8px;
+  }
 
-/* link colours */
-a {
-  color: #000000;
-  text-decoration: none;
-}
+ 
+  header {
+    margin-top: 100px;
+  }
 
-a:visited {
-    color: #000000;
-  text-decoration: none;
-}
+  h1, h2 {
+    margin: 5px -5px;
+    padding: 5px -5px;
+    line-height: 0.8em;
+  }
+  
+  h3 {
+   font-family: Helmet, Freesans, sans-serif;
+   color: #444;
+   font-weight: normal;
+  }
