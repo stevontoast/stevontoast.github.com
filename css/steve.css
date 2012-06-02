@@ -30,7 +30,6 @@
     margin-bottom: -8px;
   }
 
- 
   header {
     margin-top: 100px;
   }
@@ -45,4 +44,8 @@
    font-family: Helmet, Freesans, sans-serif;
    color: #444;
    font-weight: normal;
+  }
+
+  article {
+    margin-top:32px;
   }
